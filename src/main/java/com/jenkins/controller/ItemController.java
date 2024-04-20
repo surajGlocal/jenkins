@@ -18,7 +18,7 @@ public class ItemController {
         return itemRepository.findAll();
     }
     @GetMapping("/items/{id}")
-    Item getById(@PathVariable Long id) {
+    public Item getById(@PathVariable Long id) {
 
         return itemRepository.findById(id).orElseThrow(()-> new ItemNotFoundException(id));
     }
